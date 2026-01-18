@@ -1,0 +1,366 @@
+﻿ 
+COMPUTER NETWORKS 
+LAB MANUAL 
+ 
+Created By 
+Daniyal Faheem    2024F-mulug-1002 
+ 
+ 
+ 
+ 
+Submitted to: 
+Shamin Batool 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+SCHOOL OF INFORMATION TECHNOLOGY 
+MINHAJ UNIVERSITY LAHORE 
+ 
+Contents
+CHAPTER # 0	5
+TOPIC: BASIC NETWORKING COMMANDS	5
+1. Hostname	5
+2. IPCONFIG	5
+3. IPCONFIG /ALL	5
+4. GETMAC	6
+5. PING	7
+CHAPTER # 01	7
+TOPIC: INTRODUCTION TO CISCO PACKET TRACER	7
+CHAPTER # 02	9
+TOPIC: NETWORK TOPOLOGIES	9
+1. Peer-to-Peer (P2P)	9
+2. Bus Topology	9
+3. Ring Topology	9
+4. Star Topology	10
+CHAPTER # 03	11
+TOPIC: STUDY OF NETWORK DEVICES	11
+1. Repeater	11
+2. Hub	12
+3. Switch	13
+4. Router	13
+CHAPTER # 04	14
+TOPIC: VLAN CONFIGURATION (Virtual LAN)	14
+CHAPTER # 5:	16
+OSI Layers	16
+OSI MODEL:	16
+OSI MODEL LAYERS	17
+Layer 7: Application Layer:	17
+The Application Layer sits at the very top of the OSI Model - it's the layer closest to us, the actual users. This is where all the apps and programs we use every day do their work, like email, web browsers, and file-sharing tools.	17
+This layer creates the data that needs to be sent across the network. For example, when you send an email or download a file, it starts here.	17
+You can think of the Application Layer as a window or gateway. It lets your apps connect to the network and send information out. It also receives data coming back and displays it to you in a way you can understand and use.	17
+Some common protocols (which are like specific rules or languages) used in this layer include:	17
+*	SMTP: for sending emails	17
+*	FTP: for transferring files	17
+*	DNS: for finding website addresses	17
+Layer 6: Presentation Layer	18
+Layer 5: Session Layer	19
+Layer 4: Transport Layer:	20
+The Transport Layer acts as a bridge it receives data from the Application Layer above and passes it down to the Network Layer below. In this layer, data is called Segments (just small chunks of information).	20
+The main job of this layer is to make sure your complete message gets delivered from start to finish from your device all the way to the destination device. Think of it like a delivery service that ensures your package arrives safely and completely at the right address.	20
+Here's what this layer does:	20
+*	Breaks data into smaller pieces: It divides large messages into smaller segments that are easier to send	20
+*	Ensures reliable delivery: It checks that all the segments arrive correctly and in the right order	20
+*	Error checking: If something goes wrong or gets lost along the way, this layer detects it and resends the missing pieces	20
+*	Flow control: It makes sure data isn't sent too fast or too slow, keeping everything smooth	20
+Some common protocols used in this layer include:	20
+*	TCP (Transmission Control Protocol): ensures reliable, ordered delivery	20
+*	UDP (User Datagram Protocol): faster but doesn't guarantee delivery	20
+Layer 3: Network Layer	21
+The Network Layer is responsible for moving data from one computer to another, especially when they're on different networks. Think of it like a GPS system that figures out the best route to get your data where it needs to go.	21
+Here's what this layer does:	21
+*	Packet routing: It chooses the shortest and most efficient path to send your data through multiple networks. If there are several possible routes, it picks the best one, just like choosing the fastest route on a map.	21
+*	Addressing: This layer adds important address labels to your data. It puts both the sender's IP address and the receiver's IP address in the header (like writing a return address and destination address on an envelope). This way, the data knows where it's coming from and where it needs to go.	21
+*	Data is called Packets: In this layer, the data segments are now called Packets.	21
+*	Uses network devices: Devices like routers and switches work at this layer to direct traffic and make sure packets reach the correct destination.	21
+Layer 2: Data Link Layer	22
+The Data Link Layer is responsible for moving data directly from one device (node) to another that are connected nearby. Its main job is to make sure the data travels without any errors across the physical connection between two devices.	22
+Here's what this layer does:	22
+Error-free delivery: It checks the data carefully to make sure no mistakes happen when it moves from one device to another on the same network.	22
+Uses MAC addresses: When data arrives at a network, this layer uses the MAC address (a unique ID for each device, like a serial number) to deliver it to the correct device or host.	22
+Data is called Frames: In this layer, packets are now called Frames. Think of frames as data wrapped in a protective envelope for safe delivery.	22
+Uses network devices: Common devices that work at this layer include Switches and Bridges, which help direct frames to the right place within a local network.	22
+Layer 1: Physical Layer:	23
+The Physical Layer is the very bottom layer of the OSI Model. It deals with the actual physical connection between devices things like cables, wires, signals, and electrical pulses. This layer handles information in its most basic form: bits (which are just 0s and 1s).	23
+Here's what this layer does:	23
+*	Transmits raw bits: It sends individual bits (0s and 1s) from one device to another through physical means like cables, radio waves, or fiber optics.	23
+*	Handles the physical connection: This includes everything you can physically touch or see, like network cables, connectors, voltage levels, and light signals.	23
+*	Converts signals: When data arrives, this layer receives the electrical, light, or radio signals and converts them into 0s and 1s (digital bits). Then it passes these bits up to the Data Link Layer, which puts them back together into frames.	23
+Common examples at this layer include:	23
+*	Ethernet cables	23
+*	Wi-Fi signals	23
+*	USB connections	23
+*	Fiber optic cables	23
+
+ 
+CHAPTER # 0 
+TOPIC: BASIC NETWORKING COMMANDS 
+Objective: 
+To familiarize myself with the Windows Command Line Interface (CLI) and execute basic networking commands to gather system and network information. 
+Procedure: 
+I opened the Command Prompt (cmd) on my Windows system and executed the following commands. 
+1. Hostname 
+This command is the simplest one. It just tells us the name of the computer we are currently working on. 
+● Command: hostname 
+● Observation: The system returned the device name (e.g., Daniyal). 
+ 
+2. IPCONFIG 
+This is probably the most used command. It shows the current TCP/IP network configuration values. It helps me see my IP address, Subnet Mask, and Default Gateway. 
+● Command: ipconfig 
+● Observation: I could see the IPv4 address assigned to my Wi-Fi adapter. 
+ 
+3. IPCONFIG /ALL 
+This is a more detailed version of the previous command. It shows everything, including the DNS server and the physical address (MAC address). 
+● Command: ipconfig /all 
+● Observation: It listed all adapters, even the disconnected ones, and showed the physical MAC address for each. 
+
+4. GETMAC 
+This command is used specifically to find the Media Access Control (MAC) address of the network adapters. It's a unique hardware ID. 
+● Command: getmac 
+● Observation: It displayed the physical addresses. 
+
+ 
+5. PING 
+This command is used to test if a host is reachable. I used it to check if my internet was working by pinging a public server. 
+● Command: ping google.com 
+● Observation: My computer sent 4 packets of data. I received 4 replies, which means the connection is stable with 0% packet loss. 
+ 
+ 
+ 
+CHAPTER # 01 
+TOPIC: INTRODUCTION TO CISCO PACKET TRACER 
+Introduction: 
+Cisco Packet Tracer is a simulation tool we use in the lab to create virtual networks. It allows us to experiment with routers, switches, and PCs without needing physical hardware. It helps in troubleshooting and understanding how data flows. Key Interface Areas: 
+1. Workspace: The big white area where we draw the network. 
+ 
+2. Device Box (Bottom Left): This is where we pick devices like Routers, Switches, Hubs, Connections (cables), and End Devices (PCs/Laptops). 
+  
+3. Top Menu: Contains standard options like Save, Print, and Zoom. 
+ 
+Common Tools I Used: 
+● Place Note (N): I used this to write labels (like IP addresses) next to the PCs so I don't forget them. 
+ 
+ 
+● Delete (Del): To remove a wrong wire or device. 
+● Inspect: To look at the routing tables or ARP tables. 
+● Add Simple PDU: This is basically a "virtual ping" message to test if PC1 can talk to PC2. 
+ 
+
+ 
+CHAPTER # 02 
+TOPIC: NETWORK TOPOLOGIES 
+Objective: 
+To design and simulate different network layouts (topologies) to understand how nodes are connected. 
+1. Peer-to-Peer (P2P) 
+This is the simplest connection between just two computers. ● Setup: I connected PC0 and PC1 directly using a Copper Cross-Over Cable. 
+● Configuration: 
+○ PC1 IP: 192.168.10.1 
+○ PC2 IP: 192.168.10.2 
+● Result: I was able to ping PC1 from PC2 successfully. 
+ 
+2. Bus Topology 
+In this layout, all devices share a single communication line (backbone). 
+● Setup: Since Packet Tracer doesn't have a specific "Bus" cable, I simulated this using a series of Switches/Hubs connected in a line. 
+● Observation: If the main link breaks, the communication stops. It's not very robust. 
+ 
+3. Ring Topology 
+Here, every device has exactly two neighbors for communication purposes. 
+● Setup: I connected 4 Switches in a circle (closed loop) and attached one PC to each switch. 
+● Observation: Data travels in a circle. In a real Token Ring, a token is passed around, but here we just simulated the circular physical connection. 
+ 
+4. Star Topology 
+This is the most common one. All devices connect to a central device (Switch). 
+● Setup: 
+○ Central Device: 2960 Switch. 
+○ End Devices: 5 PCs connected via Copper Straight-Through cables. 
+● IP Addressing: 192.168.10.1 to 192.168.10.5 
+● Result: This is the best topology because if one cable breaks, only that PC goes down. The rest of the network stays up. 
+
+ 
+ 
+ 
+CHAPTER # 03 
+TOPIC: STUDY OF NETWORK DEVICES 
+Objective: 
+To understand the difference between various connecting devices used in our labs. 
+1. Repeater 
+● Function: It works at the Physical Layer. Its main job is to regenerate weak signals so they can travel longer distances. 
+● Lab Scenario: I placed a repeater between two distant wire segments to extend the network range. 
+ 
+ 
+ 
+ 
+ 
+2. Hub 
+● Function: It is a basic device that connects multiple PCs. 
+● Key Characteristic: It is "dumb." When it receives data, it broadcasts it to everyone 
+on the network. 
+● Security Risk: I noticed in simulation mode that when PC1 sent a message to PC2, PC3 also received it. This makes the hub insecure. 
+ 
+ 
+ 
+ 
+3. Switch 
+● Function: It looks like a hub but is "intelligent." It uses MAC addresses to decide where to send data. 
+● Observation: Unlike the Hub, the Switch only sent the data to the specific destination PC. This reduces traffic and improves security. 
+ 
+ 
+4. Router 
+● Function: Used to connect two different networks (e.g., connecting a LAN to the Internet). 
+● Lab Scenario: I used a Router to connect a network with IP 192.168.1.0 to a network with IP 10.0.0.0. 
+
+ 
+ 
+CHAPTER # 04 
+TOPIC: VLAN CONFIGURATION (Virtual LAN) 
+Objective: 
+To logically separate a single physical switch into different networks (Sales and HR) for better management and security. Scenario: 
+ ● VLAN 10: Named "SALES" (Ports 1-2) 
+ ● VLAN 20: Named "HR" (Ports 3-4) Steps I Followed: 
+1. Enable Switch Configuration: 
+First, I went into the CLI of the switch and entered privileged mode. 
+Switch> enable 
+Switch# configure terminal 
+ 
+2. Creating the VLANs: 
+I created the two separate groups. Switch(config)# vlan 10 
+Switch(config-vlan)# name SALES 
+Switch(config-vlan)# exit 
+ 
+ 
+Switch(config)# vlan 20 
+Switch(config-vlan)# name HR 
+Switch(config-vlan)# exit 
+ 
+ 
+3. Assigning Ports to VLANs: 
+I assigned the first two ports to the Sales team. 
+Switch(config)# interface fastEthernet 0/1 
+Switch(config-if)# switchport mode access 
+Switch(config-if)# switchport access vlan 10 
+Switch(config-if)# exit 
+ 
+(I repeated this for port 0/2) 
+Then I assigned the next ports to the HR team. 
+Switch(config)# interface fastEthernet 0/3 
+Switch(config-if)# switchport mode access 
+Switch(config-if)# switchport access vlan 20 
+Switch(config-if)# exit 
+ CHAPTER # 5:
+     OSI Layers
+
+OSI MODEL:
+The OSI Model (Open Systems Interconnection Model) is a simple guide that shows how computers talk to each other over a network. It's like a rulebook that helps all devices understand each other, no matter what brand or type they are.
+The ISO (International Organization for Standardization) created this model so that every device could communicate using the same standard method.
+The OSI Model has 7 layers. Think of it like a 7-step process where each step does one specific job. All these layers work together like a team to make sure your messages and data reach the right place safely.
+The best part? By breaking communication into these simple layers, it's much easier to understand how networks work. It also helps engineers create new devices that can easily connect with existing technology. Everyone follows the same plan, so everything just works smoothly together.
+
+
+
+
+OSI MODEL LAYERS
+ Layer 7: Application Layer:
+The Application Layer sits at the very top of the OSI Model - it's the layer closest to us, the actual users. This is where all the apps and programs we use every day do their work, like email, web browsers, and file-sharing tools.
+This layer creates the data that needs to be sent across the network. For example, when you send an email or download a file, it starts here.
+You can think of the Application Layer as a window or gateway. It lets your apps connect to the network and send information out. It also receives data coming back and displays it to you in a way you can understand and use.
+Some common protocols (which are like specific rules or languages) used in this layer include:
+* SMTP: for sending emails
+* FTP: for transferring files
+* DNS: for finding website addresses
+     
+Layer 6: Presentation Layer
+The Presentation Layer is sometimes called the Translation Layer because it translates data into the right format. Think of it as a translator that makes sure information is in a language that both the sender and receiver can understand.
+When data comes from the Application Layer above, this layer takes it and converts or formats it properly so it can travel smoothly across the network. It's like packaging a gift before you ship it you need to wrap it the right way!
+This layer also handles important jobs like:
+* Encryption: scrambling data to keep it secure and private
+* Compression: making files smaller so they're faster to send
+* Formatting: arranging data in standard formats that other devices can recognize
+Some common protocols and formats used in this layer include:
+* TLS/SSL: for securing data and keeping your online activity safe (like when you see "https" in a web address)
+* JPEG, MPEG, GIF: these are file formats for pictures and videos that help display images and media correctly
+Layer 5: Session Layer
+The Session Layer is like a manager that controls conversations between two devices. It's responsible for starting, maintaining, and ending communication sessions between computers.
+Think of it like a phone call this layer helps "dial" the connection, keeps the call going smoothly while you're talking, and then properly "hangs up" when you're done.
+This layer also takes care of important security tasks like:
+* Authentication: making sure the devices talking to each other are really who they say they are
+* Security: protecting the connection from unauthorized access
+Some common protocols (rules) used in this layer include:
+* NetBIOS: helps computers find and talk to each other on a local network
+* PPTP: used for creating secure VPN connections
+
+Layer 4: Transport Layer:
+The Transport Layer acts as a bridge it receives data from the Application Layer above and passes it down to the Network Layer below. In this layer, data is called Segments (just small chunks of information).
+The main job of this layer is to make sure your complete message gets delivered from start to finish from your device all the way to the destination device. Think of it like a delivery service that ensures your package arrives safely and completely at the right address.
+Here's what this layer does:
+* Breaks data into smaller pieces: It divides large messages into smaller segments that are easier to send
+* Ensures reliable delivery: It checks that all the segments arrive correctly and in the right order
+* Error checking: If something goes wrong or gets lost along the way, this layer detects it and resends the missing pieces
+* Flow control: It makes sure data isn't sent too fast or too slow, keeping everything smooth
+Some common protocols used in this layer include:
+* TCP (Transmission Control Protocol): ensures reliable, ordered delivery
+* UDP (User Datagram Protocol): faster but doesn't guarantee delivery
+
+
+Layer 3: Network Layer
+The Network Layer is responsible for moving data from one computer to another, especially when they're on different networks. Think of it like a GPS system that figures out the best route to get your data where it needs to go.
+Here's what this layer does:
+* Packet routing: It chooses the shortest and most efficient path to send your data through multiple networks. If there are several possible routes, it picks the best one, just like choosing the fastest route on a map.
+* Addressing: This layer adds important address labels to your data. It puts both the sender's IP address and the receiver's IP address in the header (like writing a return address and destination address on an envelope). This way, the data knows where it's coming from and where it needs to go.
+* Data is called Packets: In this layer, the data segments are now called Packets.
+* Uses network devices: Devices like routers and switches work at this layer to direct traffic and make sure packets reach the correct destination.
+
+Layer 2: Data Link Layer
+The Data Link Layer is responsible for moving data directly from one device (node) to another that are connected nearby. Its main job is to make sure the data travels without any errors across the physical connection between two devices.
+Here's what this layer does:
+Error-free delivery: It checks the data carefully to make sure no mistakes happen when it moves from one device to another on the same network.
+Uses MAC addresses: When data arrives at a network, this layer uses the MAC address (a unique ID for each device, like a serial number) to deliver it to the correct device or host.
+Data is called Frames: In this layer, packets are now called Frames. Think of frames as data wrapped in a protective envelope for safe delivery.
+Uses network devices: Common devices that work at this layer include Switches and Bridges, which help direct frames to the right place within a local network.
+ 
+                 
+                 
+
+Layer 1: Physical Layer: 
+The Physical Layer is the very bottom layer of the OSI Model. It deals with the actual physical connection between devices things like cables, wires, signals, and electrical pulses. This layer handles information in its most basic form: bits (which are just 0s and 1s).
+Here's what this layer does:
+* Transmits raw bits: It sends individual bits (0s and 1s) from one device to another through physical means like cables, radio waves, or fiber optics.
+* Handles the physical connection: This includes everything you can physically touch or see, like network cables, connectors, voltage levels, and light signals.
+* Converts signals: When data arrives, this layer receives the electrical, light, or radio signals and converts them into 0s and 1s (digital bits). Then it passes these bits up to the Data Link Layer, which puts them back together into frames.
+Common examples at this layer include:
+* Ethernet cables
+* Wi-Fi signals
+* USB connections
+* Fiber optic cables
+           
+
+
+
+
+
+
+
+
+
+
+1 
+ 
+
+1 
+ 
+
+
+
+
+1 
+ 
+
